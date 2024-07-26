@@ -1,0 +1,25 @@
+---
+import { Image } from 'astro:assets'
+import WaitlistForm from './WaitlistForm'
+
+import hackudcImage from '../assets/hackudc.svg'
+---
+
+<div
+  class="mx-auto w-full max-w-96 rounded border border-slate-300 bg-slate-50 p-4 backdrop-blur"
+>
+  <div class="flex justify-center">
+    <div
+      class="relative h-4 w-10 rounded-full border border-slate-300 bg-indigo-50/50 lg:bg-white"
+    >
+    </div>
+  </div>
+  <Image
+    src={hackudcImage}
+    alt="HackUDC 2024 logo"
+    class="pointer-events-none mx-auto mb-6 mt-3 w-36 select-none"
+  />
+  <div class="flex">
+    <WaitlistForm client:load />
+  </div>
+</div>

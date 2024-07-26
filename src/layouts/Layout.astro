@@ -1,6 +1,6 @@
 ---
 interface Props {
-  title: string
+  title?: string
 }
 
 const { title } = Astro.props
@@ -10,11 +10,41 @@ const { title } = Astro.props
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Astro description" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
+
+    <!-- Meta Tags Generated with https://metatags.io -->
+    <!-- Primary Meta Tags -->
     <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta
+      name="description"
+      content="Sign up to get the latest updates on HackUDC! Be the first to know about participation, volunteering, and sponsorship opportunities. Join us and stay informed about this exciting event!"
+    />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://hackudc.gpul.org/" />
+    <meta property="og:title" content={title} />
+    <meta
+      property="og:description"
+      content="Sign up to get the latest updates on HackUDC! Be the first to know about participation, volunteering, and sponsorship opportunities. Join us and stay informed about this exciting event!"
+    />
+    <meta property="og:image" content="https://hackudc.gpul.org/meta.png" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://hackudc.gpul.org/" />
+    <meta property="twitter:title" content={title} />
+    <meta
+      property="twitter:description"
+      content="Sign up to get the latest updates on HackUDC! Be the first to know about participation, volunteering, and sponsorship opportunities. Join us and stay informed about this exciting event!"
+    />
+    <meta
+      property="twitter:image"
+      content="https://hackudc.gpul.org/meta.png"
+    />
   </head>
   <body>
     <slot />

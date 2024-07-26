@@ -1,9 +1,9 @@
 {
   "editor.formatOnSave": true,
-  "[astro]": {
-    "editor.defaultFormatter": "astro-build.astro-vscode"
-  },
-  "[javascript][typescript]": {
+  "[astro][javascript][typescript][css]": {
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "always"
+    },
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   }
 }

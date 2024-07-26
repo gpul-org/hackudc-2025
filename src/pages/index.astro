@@ -1,28 +1,49 @@
 ---
+import { Image } from 'astro:assets'
 import Layout from '../layouts/Layout.astro'
+
+import engineeringTeamImage from '../assets/engineering-team.svg'
+import Badge from '../components/Badge.astro'
+import WaitlistHero from '../components/WaitlistHero.astro'
 ---
 
-<Layout title="HackUDC 2025 - Landing page">
-  <div class="h-screen flex flex-col justify-center">
-    <div class="flex justify-center">
-      <div>
-        <h1 class="text-center font-bold text-3xl">HackUDC</h1>
-        <ul class="text-center">
-          <li class="font-semibold">Tercera edición (2025)</li>
-          <li>
-            <a
-              class="underline text-blue-600 hover:text-blue-700"
-              href="https://hackudc2024.gpul.org/">Segunda edición (2024)</a
-            >
-          </li>
-          <li>
-            <a
-              class="underline text-blue-600 hover:text-blue-700"
-              href="https://hackudc2023.gpul.org/">Primera edición (2023)</a
-            >
-          </li>
-        </ul>
+<Layout title="HackUDC 2025 — Join the waitlist!">
+  <!-- DESKTOP LAYOUT -->
+  <div class="hidden h-screen grid-cols-2 lg:grid">
+    <!-- LEFT SIDE -->
+    <div class="flex flex-col items-end justify-between bg-indigo-50">
+      <div class="ml-10 mr-36 mt-20 max-w-96">
+        <WaitlistHero />
       </div>
+      <div class="flex w-full justify-end">
+        <Image
+          src={engineeringTeamImage}
+          alt="People with computers on a table."
+          class="pointer-events-none mr-4 max-w-[450px] select-none"
+        />
+      </div>
+    </div>
+    <!-- RIGHT SIDE -->
+    <div class="mx-auto flex w-96 flex-col justify-center xl:ml-36">
+      <Badge />
+    </div>
+  </div>
+  <!-- PHONE LAYOUT -->
+  <div
+    class="flex min-h-screen flex-col items-center bg-indigo-50/50 lg:hidden"
+  >
+    <div class="mx-2 my-10 max-w-96">
+      <WaitlistHero />
+    </div>
+    <div class="w-full max-w-96 px-2">
+      <Badge />
+    </div>
+    <div class="mt-4 flex w-full justify-end">
+      <Image
+        src={engineeringTeamImage}
+        alt="People with computers on a table."
+        class="pointer-events-none mr-4 max-w-[450px] select-none"
+      />
     </div>
   </div>
 </Layout>
