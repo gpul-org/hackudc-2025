@@ -41,7 +41,7 @@ export default function Form() {
       await request
 
       setTimeout(() => {
-        navigate('https://gpul.org')
+        navigate('https://www.youtube.com/watch?v=Z4itLbMdTYM')
       }, 2500)
     } catch (error) {
       console.error('Error:', error)
