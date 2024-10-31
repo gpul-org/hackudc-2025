@@ -9,7 +9,8 @@ import hackudcImage from '../assets/hackudc.svg'
   <div
     class="to-50 h-screen w-screen bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-green-800 to-[#181818] to-50%"
   >
-    <div class="pt-20"></div>
+    <!-- <div class="pt-20"></div>
+    <div class="pt-10"></div>--><!-- Separar de la barra -->
     <div class="flex h-20 justify-center">
       <Image
         src={hackudcImage}
@@ -22,7 +23,7 @@ import hackudcImage from '../assets/hackudc.svg'
       <div>|</div>
       <div>Febrero 2025</div>
     </div>
-    <div class="mt-2 flex flex-col px-2 align-middle text-5xl">
+    <div class="mt-2 flex flex-col px-2 text-5xl">
       <h1
         class="inline-block bg-gradient-to-br from-gray-500 to-gray-300 bg-clip-text text-center font-light text-transparent"
       >
@@ -66,8 +67,11 @@ import hackudcImage from '../assets/hackudc.svg'
         ¿Qué es HackUDC?
       </h1>
       <p class="margin-auto pt-3 text-center text-3xl text-gray-300">
-        HackUDC 2025 es la tercera edición del mayor hackathon de Galicia, en
-        donde más de 250 estudiantes se juntan para desarrollar proyectos.
+        HackUDC 2025 es la <span class="underline decoration-green-500"
+          >tercera edición</span
+        > del mayor hackathon de Galicia, en donde <span
+          class="underline decoration-green-500">más de 250 estudiantes</span
+        > se juntan para desarrollar proyectos.
       </p>
       <div class="mt-4 flex flex-col-reverse lg:flex-row">
         <div class="W-screen text-white lg:w-1/2">
@@ -149,28 +153,48 @@ import hackudcImage from '../assets/hackudc.svg'
       </div>
       <h2 class="pb-4 text-4xl text-gray-300">Tier 1</h2>
       <div class="flex flex-row justify-around pb-4">
-        <div class="aspect-square w-64 rounded-xl bg-[#181818]"></div>
-        <div class="aspect-square w-64 rounded-xl bg-[#181818]"></div>
+        <div class="aspect-square w-48 rounded-xl bg-[#181818]"></div>
+        <div class="aspect-square w-48 rounded-xl bg-[#181818]"></div>
+        <div class="aspect-square w-48 rounded-xl bg-[#181818]"></div>
       </div>
-      <h2 class="pb-4 text-4xl text-gray-300">Tier x</h2>
+      <h2 class="gap-x-8 pb-4 text-4xl text-gray-300">Tier x</h2>
       <div class="flex flex-row justify-around">
-        <div class="aspect-square w-64 rounded-xl bg-[#181818]"></div>
-        <div class="aspect-square w-64 rounded-xl bg-[#181818]"></div>
-        <div class="aspect-square w-64 rounded-xl bg-[#181818]"></div>
-        <div class="aspect-square w-64 rounded-xl bg-[#181818]"></div>
+        <div class="aspect-square w-32 rounded-xl bg-[#181818]"></div>
+        <div class="aspect-square w-32 rounded-xl bg-[#181818]"></div>
+        <div class="aspect-square w-32 rounded-xl bg-[#181818]"></div>
+        <div class="aspect-square w-32 rounded-xl bg-[#181818]"></div>
+        <div class="aspect-square w-32 rounded-xl bg-[#181818]"></div>
       </div>
       <h1 class="pt-16 text-center text-4xl text-gray-300">
         Con la colaboración de
         <div class="jusfity-around flex flex-row">
-          <div class="m-auto mt-8 aspect-[2/1] w-1/5 rounded-xl bg-[#181818]">
+          <div class="m-auto mt-8 aspect-[2/1] w-1/4 rounded-xl bg-[#181818]">
           </div>
-          <div class="m-auto mt-8 aspect-[2/1] w-1/5 rounded-xl bg-[#181818]">
+          <div class="m-auto mt-8 aspect-[2/1] w-1/4 rounded-xl bg-[#181818]">
           </div>
-          <div class="m-auto mt-8 aspect-[2/1] w-1/5 rounded-xl bg-[#181818]">
+          <div class="m-auto mt-8 aspect-[2/1] w-1/4 rounded-xl bg-[#181818]">
           </div>
         </div>
       </h1>
     </div>
   </div>
   <div class="h-52 bg-gradient-to-t from-[#181818] from-0% to-green-500"></div>
+  <div
+    class="mx-auto mb-24 mt-24 w-2/3 rounded-xl border border-green-500 p-12 text-center"
+  >
+    <h1
+      class="bg-gradient-to-br from-green-300 to-green-500 bg-clip-text pb-1 text-center text-5xl text-transparent"
+    >
+      ¡Apúntate ahora!
+    </h1>
+    <h2 class="mt-2 text-2xl text-gray-200">
+      Cubre ahora el formulario de registro para asegurar tu plaza. ¡Son
+      limitadas!
+    </h2>
+    <div
+      class="mx-auto mt-4 w-fit rounded-full bg-green-500 px-8 py-3 text-lg text-white"
+    >
+      Resitrarme
+    </div>
+  </div>
 </Layout>
