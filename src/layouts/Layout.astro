@@ -11,13 +11,6 @@ interface Props {
 }
 
 const { title } = Astro.props
-
-import hackudcImage from '../assets/hackudc.svg'
-
-import { Image } from 'astro:assets'
-
-import { faInstagram, faXTwitter } from '@fortawesome/free-brands-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 ---
 
 <!doctype html>
@@ -60,70 +53,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
       content="https://hackudc.gpul.org/meta.png"
     />
   </head>
-  <body class="min-h-screen bg-[#181818]">
-    <header
-      class="fixed z-50 flex w-screen justify-center bg-[#181818EE] p-4 backdrop-blur-lg"
-    >
-      <div class="flex w-4/5 flex-row justify-between">
-        <Image
-          src={hackudcImage}
-          alt="HackUDC logo"
-          style="filter: invert(49%) saturate(542%) hue-rotate(182deg) contrast(89%);"
-          height="48px"
-          class="self-center"
-        />
-        <div
-          class="flex flex-row justify-around self-center text-xl text-white"
-        >
-          <a href="#" class="float-left p-4">Enlace 1</a>
-          <a href="#" class="float-left p-4">Enlace 2</a>
-          <a href="#" class="float-left p-4">Enlace 3</a>
-          <a href="#" class="float-left p-4">Enlace 4</a>
-        </div>
-        <div class="self-center">
-          <p
-            class="rounded-full border border-green-500 px-4 py-2 text-green-500 transition duration-150 hover:bg-green-500 hover:text-white"
-          >
-            Información
-          </p>
-        </div>
-      </div>
-    </header>
-
+  <body class="bg-[#181818] text-white/80">
     <slot />
     <Toaster position="bottom-center" client:load />
-
-    <footer class="flex flex-row justify-center border-t border-[#555]">
-      <div class="flex w-4/5 flex-row justify-between p-4 text-gray-200">
-        <p class="flex flex-row">
-          <img
-            src="https://gpul.org/assets/images/logos/logo_gpul.png"
-            alt=""
-            class="h-12"
-          />
-          <span class="self-center"
-            >Página web desarrollada por <span class="text-green-500">GPUL</span
-            ></span
-          >
-        </p>
-        <div class="flex flex-row gap-2 self-center">
-          <a href="#"
-            ><FontAwesomeIcon
-              icon={faInstagram}
-              className="h-5 text-white/80"
-            /></a
-          >
-          <a href="#"
-            ><FontAwesomeIcon
-              icon={faXTwitter}
-              className="h-5 text-white/80"
-            /></a
-          >
-        </div>
-      </div>
-    </footer>
   </body>
-
   <style is:global>
     body {
       font-family: 'Roboto', sans-serif;

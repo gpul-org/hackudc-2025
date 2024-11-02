@@ -1,0 +1,17 @@
+---
+import Footer from '../components/Footer.astro'
+import Header from '../components/Header.astro'
+import Layout from './Layout.astro'
+
+const { title } = Astro.props
+---
+
+<Layout title={title}>
+  <div class="flex h-screen flex-col">
+    <Header />
+    <div class="mx-auto w-full max-w-screen-lg grow px-2">
+      <slot />
+    </div>
+    <Footer />
+  </div>
+</Layout>

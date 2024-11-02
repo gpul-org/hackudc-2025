@@ -1,5 +1,6 @@
 {
   "editor.formatOnSave": true,
+  "editor.tabSize": 2,
   "[astro][javascript][typescript][css]": {
     "editor.codeActionsOnSave": {
       "source.organizeImports": "always"
