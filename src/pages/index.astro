@@ -42,13 +42,15 @@ const scrollOptions = [
     {
       scrollOptions.map((o) => {
         return (
-          <div class="bg-animated flex h-32 flex-col justify-evenly rounded bg-white/5 px-8 py-2 duration-150 hover:scale-[1.03]">
-            <div class="px-1">
-              <FontAwesomeIcon icon={o.icon} className="h-10" />
-            </div>
-            <div>
-              <h2 class="text-xl">{o.title}</h2>
-              <p class="text-sm font-light">{o.subtitle}</p>
+          <div class="bg-animated flex h-36 flex-col justify-evenly rounded p-0.5 duration-150 hover:scale-[1.03]">
+            <div class="flex h-full flex-col justify-evenly rounded bg-[#242424] px-8 py-2 duration-150">
+              <div class="px-1">
+                <FontAwesomeIcon icon={o.icon} className="h-10" />
+              </div>
+              <div>
+                <h2 class="text-xl">{o.title}</h2>
+                <p class="text-sm font-light">{o.subtitle}</p>
+              </div>
             </div>
           </div>
         )
@@ -56,3 +58,24 @@ const scrollOptions = [
     }
   </div>
 </HeaderLayout>
+
+<style>
+  .bg-animated:hover {
+    animation: gradient 1s ease;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+  }
+
+  .bg-animated {
+    background: linear-gradient(-45deg, #22c55e, #15803d 50%, #242424 50% 100%);
+    background-size: 200% 200%;
+  }
+  @keyframes gradient {
+    0% {
+      background-position: 0% 0%;
+    }
+    100% {
+      background-position: 100% 100%;
+    }
+  }
+</style>
