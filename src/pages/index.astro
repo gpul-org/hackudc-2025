@@ -1,7 +1,13 @@
 ---
+import { faCalendar } from '@fortawesome/free-regular-svg-icons'
 import {
   faInfo,
   faLaptopCode,
+  faLightbulb,
+  faLocationArrow,
+  faRocket,
+  faSackDollar,
+  faScroll,
   faSuitcase,
 } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -25,10 +31,49 @@ const scrollOptions = [
     subtitle: 'Fechas, ubicación, etc.',
   },
 ]
+
+const generalInfoOptions = [
+  {
+    icon: faCalendar,
+    title: '16, 17 y 18 de febrero',
+    subtitle:
+      'El evento tendrá lugar durante tres días, empezando el viernes y terminando el domingo con la entrega de premios.',
+  },
+  {
+    icon: faLocationArrow,
+    title: 'Facultad de Informática, UDC',
+    subtitle:
+      'El evento tendrá lugar en la Facultad de Informática de la UDC, en el Campus de Elviña.',
+  },
+  {
+    icon: faScroll,
+    title: 'Software libre',
+    subtitle:
+      'El único requisito para los proyectos es que tienen que ser publicados bajo una licencia de software libre.',
+  },
+  {
+    icon: faRocket,
+    title: 'Retos y +3000 € en premios',
+    subtitle:
+      'El único requisito para los proyectos es que tienen que ser publicados bajo una licencia de software libre.',
+  },
+  {
+    icon: faSackDollar,
+    title: '¡Todo incluido!',
+    subtitle:
+      'El único requisito para los proyectos es que tienen que ser publicados bajo una licencia de software libre.',
+  },
+  {
+    icon: faLightbulb,
+    title: 'Organizado por GPUL',
+    subtitle:
+      'El único requisito para los proyectos es que tienen que ser publicados bajo una licencia de software libre.',
+  },
+]
 ---
 
 <HeaderLayout title="HackUDC 2025">
-  <div class="mx-auto mt-8 w-[300px] sm:w-[400px] md:w-[500px]">
+  <div class="mx-auto mt-14 w-[300px] sm:w-[400px] md:w-[500px]">
     <Logo />
   </div>
   <p class="mt-12 text-center text-2xl sm:text-3xl md:text-5xl">
@@ -57,6 +102,29 @@ const scrollOptions = [
       })
     }
   </div>
+  <div class="mx-auto mt-20 h-10 w-[700px] rounded-lg bg-white/20"></div>
+  <div class="mx-auto mt-2 h-10 w-[400px] rounded-lg bg-white/20"></div>
+  <div class="mx-auto mt-12 aspect-video w-[600px] rounded-lg bg-white/20">
+  </div>
+  <div class="mx-auto mt-24 h-10 w-[700px] rounded-lg bg-white/20"></div>
+  <div class="mt-10 grid grid-cols-1 gap-x-20 gap-y-4 md:grid-cols-2">
+    {
+      generalInfoOptions.map((o) => {
+        return (
+          <div class="flex gap-2">
+            <div class="my-2 flex h-10 w-10 shrink-0 items-center justify-center">
+              <FontAwesomeIcon icon={o.icon} className="h-6" />
+            </div>
+            <div class="py-4">
+              <p class="mb-1 text-xl">{o.title}</p>
+              <p>{o.subtitle}</p>
+            </div>
+          </div>
+        )
+      })
+    }
+  </div>
+  <div class="h-[1000px]"></div>
 </HeaderLayout>
 
 <style>
