@@ -12,7 +12,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 const infoOptions = [
   {
     icon: faCalendar,
-    title: '16, 17 y 18 de febrero',
+    title: '21, 22 y 23 de febrero',
     subtitle:
       'El evento tendrá lugar durante tres días, empezando el viernes y terminando el domingo con la entrega de premios.',
   },
@@ -49,28 +49,32 @@ const infoOptions = [
 ]
 ---
 
-<div id="info">
-  <h1
-    class="mt-20 bg-gradient-to-br from-green-300 to-green-500 bg-clip-text text-center text-4xl text-transparent"
-  >
-    Lorem ipsum sit amet
-  </h1>
-  <h2 class="mt-2 text-center text-2xl text-gray-300">Aquí puedes revivirla</h2>
-  <div class="mt-10 grid grid-cols-1 gap-x-20 gap-y-4 md:grid-cols-2">
-    {
-      infoOptions.map((o) => {
-        return (
-          <div class="flex gap-2">
-            <div class="my-2 flex h-10 w-10 shrink-0 items-center justify-center">
-              <FontAwesomeIcon icon={o.icon} className="h-6" />
-            </div>
-            <div class="py-4">
-              <p class="mb-1 text-xl">{o.title}</p>
-              <p>{o.subtitle}</p>
-            </div>
+<h1
+  id="info"
+  class="bg-gradient-to-br from-green-300 to-green-500 bg-clip-text pt-20 text-center text-2xl text-transparent sm:text-3xl md:text-4xl"
+>
+  Lo mínimo que necesitas saber
+</h1>
+<h2 class="mt-2 text-center text-gray-300 sm:text-xl md:text-2xl">
+  Fechas, ubicación, premios...
+</h2>
+<div class="mt-10 grid grid-cols-1 gap-x-20 gap-y-4 md:grid-cols-2">
+  {
+    infoOptions.map((o) => {
+      return (
+        <div class="group flex gap-2">
+          <div class="my-2 flex h-10 w-10 shrink-0 items-center justify-center">
+            <FontAwesomeIcon
+              icon={o.icon}
+              className="h-6 group-hover:rotate-12 group-hover:text-green-400/80 duration-150"
+            />
           </div>
-        )
-      })
-    }
-  </div>
+          <div class="py-4">
+            <p class="mb-1 text-xl">{o.title}</p>
+            <p>{o.subtitle}</p>
+          </div>
+        </div>
+      )
+    })
+  }
 </div>

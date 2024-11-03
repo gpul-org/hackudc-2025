@@ -1,6 +1,7 @@
 ---
 import Info from '../components/homepage/Info.astro'
 import ScrollOptions from '../components/homepage/ScrollOptions.astro'
+import Sponsors from '../components/homepage/Sponsors.astro'
 import Youtube from '../components/homepage/Youtube.astro'
 import Logo from '../components/Logo.astro'
 
@@ -19,29 +20,9 @@ import HeaderLayout from '../layouts/HeaderLayout.astro'
     > de Galicia
   </p>
   <ScrollOptions />
-
   <Youtube />
-
   <Info />
-  <div class="mx-auto mt-24 h-10 w-[700px] rounded-lg bg-white/20"></div>
-  <div class="mx-auto mt-8 h-6 w-[100px] rounded-lg bg-white/20"></div>
-  <div class="mx-auto mt-8 h-40 w-[400px] rounded-lg bg-white/20"></div>
-  <div class="mx-auto mt-8 h-6 w-[100px] rounded-lg bg-white/20"></div>
-  <div class="mt-8 grid grid-cols-1 gap-8 px-3 sm:grid-cols-2 md:grid-cols-3">
-    <div class="h-32 rounded-lg bg-white/20"></div>
-    <div class="h-32 rounded-lg bg-white/20"></div>
-    <div class="h-32 rounded-lg bg-white/20"></div>
-    <div class="h-32 rounded-lg bg-white/20"></div>
-    <div class="h-32 rounded-lg bg-white/20"></div>
-    <div class="h-32 rounded-lg bg-white/20"></div>
-  </div>
-  <div class="mx-auto mt-8 h-6 w-[100px] rounded-lg bg-white/20"></div>
-  <div
-    class="mt-8 grid grid-cols-1 gap-7 px-8 sm:grid-cols-3 md:gap-12 md:px-14"
-  >
-    <div class="h-24 rounded-lg bg-white/20"></div>
-    <div class="h-24 rounded-lg bg-white/20"></div>
-    <div class="h-24 rounded-lg bg-white/20"></div>
-  </div>
+  <Sponsors />
+
   <div class="h-[1000px]"></div>
 </HeaderLayout>
