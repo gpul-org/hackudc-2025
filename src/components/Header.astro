@@ -17,14 +17,14 @@ const primaryLink = { text: 'Registro', href: '#' }
 >
   <div class="sm:hidden">
     <button
-      class="rounded-full"
+      class="flex items-center rounded-full"
       onclick="document.getElementById('mobile-menu').classList.toggle('hidden'); document.getElementById('mobile-menu').classList.toggle('flex')"
     >
       <FontAwesomeIcon icon={faBars} className="h-5" />
     </button>
     <div
       id="mobile-menu"
-      class="absolute left-0 top-[4.75rem] hidden w-full flex-col rounded-b-xl py-2 text-center backdrop-blur"
+      class="absolute left-0 top-[4.75rem] z-50 hidden w-full flex-col rounded-b-xl bg-[#181818DD] py-2 text-center shadow-2xl backdrop-blur"
     >
       {
         navLinks.map((l) => {
