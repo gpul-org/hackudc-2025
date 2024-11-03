@@ -63,14 +63,14 @@ export default function Form() {
             <span className="absolute inset-y-0 left-0 flex items-center pl-3">
               <FontAwesomeIcon
                 icon={faUser}
-                className="h-5 w-5 text-gray-500"
+                className="h-5 w-5 text-white/50"
               />
             </span>
             <input
               id="nameInput"
               type="text"
               required
-              className="block w-full rounded-lg border border-gray-800 bg-gray-900 p-2.5 pl-10 font-light text-gray-300 placeholder-gray-500 focus:border-transparent focus:outline-none focus:ring-[1px] focus:ring-indigo-500 focus:ring-opacity-60"
+              className="block w-full rounded-lg border border-white/20 bg-white/5 p-2.5 pl-10 font-light text-white placeholder-white/50 focus:border-transparent focus:outline-none focus:ring-[1px] focus:ring-green-500 focus:ring-opacity-60"
               placeholder="Introduce tu nombre"
             />
           </div>
@@ -79,33 +79,33 @@ export default function Form() {
             <span className="absolute inset-y-0 left-0 flex items-center pl-3">
               <FontAwesomeIcon
                 icon={faEnvelope}
-                className="h-5 w-5 text-gray-500"
+                className="h-5 w-5 text-white/50"
               />
             </span>
             <input
               id="emailInput"
               type="email"
               required
-              className="block w-full rounded-lg border border-gray-800 bg-gray-900 p-2.5 pl-10 font-light text-gray-300 placeholder-gray-500 focus:border-transparent focus:outline-none focus:ring-[1px] focus:ring-indigo-500 focus:ring-opacity-60"
+              className="block w-full rounded-lg border border-white/20 bg-white/5 p-2.5 pl-10 font-light text-gray-300 placeholder-white/50 focus:border-transparent focus:outline-none focus:ring-[1px] focus:ring-green-500 focus:ring-opacity-60"
               placeholder="Un correo electrónico"
             />
           </div>
 
           <button
             type="submit"
-            className="hover group relative w-full rounded-lg bg-gray-800 p-2.5 text-center font-light text-gray-400"
+            className="hover group relative w-full rounded-lg bg-green-900 p-2.5 text-center font-light text-white/75"
             disabled={disabled}
           >
             Unirse a la waitlist
             <div className="absolute inset-y-0 right-4 flex items-center transition-all group-hover:right-3">
               <FontAwesomeIcon
                 icon={faArrowRight}
-                className="h-5 w-5 text-gray-500"
+                className="h-5 w-5 text-white/50"
               />
             </div>
           </button>
         </form>
-        <p className="mt-2 text-center text-xs font-light text-white/50">
+        <p className="mt-2 text-center text-xs font-light text-white/75">
           Al enviar, aceptas la{' '}
           <a href="/privacy" className="underline">
             política de privacidad
@@ -134,12 +134,12 @@ export default function Form() {
       />
       <button
         type="button"
-        className="hover group relative w-full rounded-lg bg-gray-800 p-2.5 text-center font-light text-gray-400"
+        className="hover group relative w-full rounded-lg bg-green-900 p-2.5 text-center font-light text-white/50"
         onClick={() => navigate('https://www.youtube.com/watch?v=Z4itLbMdTYM')}
       >
         Ver el aftermovie
         <div className="absolute inset-y-0 right-4 flex items-center transition-all group-hover:right-5">
-          <FontAwesomeIcon icon={faYoutube} className="h-5 w-5 text-gray-500" />
+          <FontAwesomeIcon icon={faYoutube} className="h-5 w-5 text-white/75" />
         </div>
       </button>
     </div>

@@ -1,0 +1,78 @@
+---
+import { faTriangleExclamation } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import Layout from '../layouts/Layout.astro'
+
+import Form from '../components/Form'
+import Logo from '../components/Logo.astro'
+
+import Footer from '../components/Footer.astro'
+---
+
+<Layout title={'Registro - HackUDC 2025'}>
+  <div class="flex min-h-screen flex-col">
+    <div class="mx-auto mt-4 w-full max-w-screen-lg grow px-2">
+      <a
+        href="/"
+        class="hover-bg-green-700 rounded-full border border-green-700 px-4 py-2 text-green-500 transition duration-150 hover:text-white"
+      >
+        Volver a inicio</a
+      >
+
+      <div class="mx-auto mt-14 w-[300px] sm:w-[400px] md:w-[500px]">
+        <Logo />
+      </div>
+      <p class="mt-14 text-center text-3xl sm:text-4xl md:text-5xl">
+        Regístrate para
+        <span
+          class="inline-block bg-gradient-to-br from-green-700 via-green-500 to-green-700 bg-clip-text font-medium text-transparent"
+          >HackUDC 2025</span
+        >
+      </p>
+      <h2
+        class="mt-2 pb-2 pt-4 text-center text-gray-300 sm:text-xl md:text-2xl"
+      >
+        <FontAwesomeIcon
+          icon={faTriangleExclamation}
+          className="text-yellow-300"
+        /> El registro aún no está abierto.
+      </h2>
+
+      <!-- Formulario -->
+      <div class="bg-animated mx-auto mt-12 w-3/4 rounded-xl p-0.5">
+        <div class="rounded-xl bg-[#181818] px-8 py-4">
+          <h2 class="pt-4 text-center text-2xl">
+            Apúntate a la waitlist y<br /> te avisaremos cuando se abra el registro
+
+            <div class="mx-auto px-4 pb-4 pt-8">
+              <Form client:load />
+            </div>
+          </h2>
+        </div>
+      </div>
+    </div>
+    <div class="h-[100px]"></div>
+    <Footer />
+  </div>
+</Layout>
+
+<style>
+  .bg-animated:hover {
+    animation: gradient 500ms ease;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+  }
+
+  .bg-animated {
+    background: linear-gradient(-45deg, #22c55e, #15803d 50%, #242424 50% 100%);
+    background-size: 200% 200%;
+  }
+  @keyframes gradient {
+    0% {
+      background-position: 0% 0%;
+    }
+    100% {
+      background-position: 100% 100%;
+    }
+  }
+</style>

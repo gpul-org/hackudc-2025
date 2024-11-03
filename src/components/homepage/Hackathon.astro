@@ -1,3 +1,9 @@
+---
+import { Image } from 'astro:assets'
+
+import hackers from '../../assets/participantes.jpg'
+---
+
 <div>
   <h1
     class="mt-20 bg-gradient-to-br from-green-300 to-green-500 bg-clip-text pb-8 pt-2 text-center text-4xl text-transparent md:text-5xl"
@@ -23,6 +29,9 @@
         >.
       </p>
     </div>
-    <div class="mx-auto h-72 w-[95%] rounded-xl bg-white/20 md:w-full"></div>
+    <!--<div class="mx-auto h-72 w-[95%] rounded-xl bg-white/20 md:w-full"></div>-->
+    <div class="mx-auto h-72 h-fit w-[95%] md:w-full">
+      <Image src={hackers} alt="Participantes" className="rounded-xl" />
+    </div>
   </div>
 </div>
