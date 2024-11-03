@@ -1,29 +1,23 @@
 ---
 import FAQ from '../components/homepage/FAQ.astro'
+import Hackathon from '../components/homepage/Hackathon.astro'
+import Hero from '../components/homepage/Hero.astro'
 import Info from '../components/homepage/Info.astro'
 import ScrollOptions from '../components/homepage/ScrollOptions.astro'
 import Sponsors from '../components/homepage/Sponsors.astro'
 import Youtube from '../components/homepage/Youtube.astro'
-import Logo from '../components/Logo.astro'
 
 import HeaderLayout from '../layouts/HeaderLayout.astro'
 ---
 
 <HeaderLayout title="HackUDC 2025">
-  <div class="mx-auto mt-14 w-[300px] sm:w-[400px] md:w-[500px]">
-    <Logo />
-  </div>
-  <p class="mt-12 text-center text-3xl sm:text-4xl md:text-5xl">
-    La tercera edición del mayor <br />
-    <span
-      class="inline-block bg-gradient-to-br from-green-700 via-green-500 to-green-700 bg-clip-text text-transparent"
-      >hackathon estudiantil</span
-    > de Galicia
-  </p>
+  <Hero />
   <ScrollOptions />
   <Youtube />
   <Info />
   <Sponsors />
   <FAQ />
+  <Hackathon />
+
   <div class="h-[50px]"></div>
 </HeaderLayout>
