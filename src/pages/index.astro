@@ -19,16 +19,19 @@ const scrollOptions = [
     icon: faInfo,
     title: 'Info. general',
     subtitle: 'Fechas, ubicación, etc.',
+    href: '#info',
   },
   {
     icon: faLaptopCode,
     title: 'Participar',
     subtitle: 'Fechas, ubicación, etc.',
+    href: '#',
   },
   {
     icon: faSuitcase,
     title: 'Patrocinar',
     subtitle: 'Fechas, ubicación, etc.',
+    href: '#',
   },
 ]
 
@@ -76,7 +79,7 @@ const generalInfoOptions = [
   <div class="mx-auto mt-14 w-[300px] sm:w-[400px] md:w-[500px]">
     <Logo />
   </div>
-  <p class="mt-12 text-center text-2xl sm:text-3xl md:text-5xl">
+  <p class="mt-12 text-center text-3xl sm:text-4xl md:text-5xl">
     La tercera edición del mayor <br />
     <span
       class="inline-block bg-gradient-to-br from-green-700 via-green-500 to-green-700 bg-clip-text text-transparent"
@@ -87,7 +90,10 @@ const generalInfoOptions = [
     {
       scrollOptions.map((o) => {
         return (
-          <div class="bg-animated flex h-36 flex-col justify-evenly rounded p-0.5 duration-150 hover:scale-[1.03]">
+          <a
+            href={o.href}
+            class="bg-animated flex h-36 flex-col justify-evenly rounded p-0.5 duration-150 hover:scale-[1.03]"
+          >
             <div class="flex h-full flex-col justify-evenly rounded bg-[#242424] px-8 py-2 duration-150">
               <div class="px-1">
                 <FontAwesomeIcon icon={o.icon} className="h-10" />
@@ -97,39 +103,64 @@ const generalInfoOptions = [
                 <p class="text-sm font-light">{o.subtitle}</p>
               </div>
             </div>
-          </div>
+          </a>
         )
       })
     }
   </div>
-  <div class="mx-auto mt-20 h-10 w-[700px] rounded-lg bg-white/20"></div>
-  <div class="mx-auto mt-2 h-10 w-[400px] rounded-lg bg-white/20"></div>
-  <div class="mx-auto mt-12 aspect-video w-[600px] rounded-lg bg-white/20">
+
+  <h1
+    class="mt-20 bg-gradient-to-br from-green-300 to-green-500 bg-clip-text text-center text-4xl text-transparent"
+  >
+    Lorem ipsum sit amet
+  </h1>
+  <h2 class="mt-2 text-center text-2xl text-gray-300">Aquí puedes revivirla</h2>
+  <div class="mx-auto mt-12 aspect-video w-[700px] max-w-[90%] rounded-lg">
+    <iframe
+      width="100%"
+      height="100%"
+      class="rounded-lg"
+      src="https://www.youtube.com/embed/Z4itLbMdTYM?si=KZTsDMmPn4GYujnx&controls=0"
+      title="YouTube video player"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allowfullscreen></iframe>
   </div>
-  <div class="mx-auto mt-24 h-10 w-[700px] rounded-lg bg-white/20"></div>
-  <div class="mt-10 grid grid-cols-1 gap-x-20 gap-y-4 md:grid-cols-2">
-    {
-      generalInfoOptions.map((o) => {
-        return (
-          <div class="flex gap-2">
-            <div class="my-2 flex h-10 w-10 shrink-0 items-center justify-center">
-              <FontAwesomeIcon icon={o.icon} className="h-6" />
+
+  <div id="info">
+    <h1
+      class="mt-20 bg-gradient-to-br from-green-300 to-green-500 bg-clip-text text-center text-4xl text-transparent"
+    >
+      Lorem ipsum sit amet
+    </h1>
+    <h2 class="mt-2 text-center text-2xl text-gray-300">
+      Aquí puedes revivirla
+    </h2>
+    <div class="mt-10 grid grid-cols-1 gap-x-20 gap-y-4 md:grid-cols-2">
+      {
+        generalInfoOptions.map((o) => {
+          return (
+            <div class="flex gap-2">
+              <div class="my-2 flex h-10 w-10 shrink-0 items-center justify-center">
+                <FontAwesomeIcon icon={o.icon} className="h-6" />
+              </div>
+              <div class="py-4">
+                <p class="mb-1 text-xl">{o.title}</p>
+                <p>{o.subtitle}</p>
+              </div>
             </div>
-            <div class="py-4">
-              <p class="mb-1 text-xl">{o.title}</p>
-              <p>{o.subtitle}</p>
-            </div>
-          </div>
-        )
-      })
-    }
+          )
+        })
+      }
+    </div>
   </div>
   <div class="h-[1000px]"></div>
 </HeaderLayout>
 
 <style>
   .bg-animated:hover {
-    animation: gradient 1s ease;
+    animation: gradient 500ms ease;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
   }
