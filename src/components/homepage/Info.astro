@@ -1,0 +1,76 @@
+---
+import { faCalendar } from '@fortawesome/free-regular-svg-icons'
+import {
+  faLightbulb,
+  faLocationArrow,
+  faRocket,
+  faSackDollar,
+  faScroll,
+} from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
+const infoOptions = [
+  {
+    icon: faCalendar,
+    title: '16, 17 y 18 de febrero',
+    subtitle:
+      'El evento tendrá lugar durante tres días, empezando el viernes y terminando el domingo con la entrega de premios.',
+  },
+  {
+    icon: faLocationArrow,
+    title: 'Facultad de Informática, UDC',
+    subtitle:
+      'El evento tendrá lugar en la Facultad de Informática de la UDC, en el Campus de Elviña.',
+  },
+  {
+    icon: faScroll,
+    title: 'Software libre',
+    subtitle:
+      'El único requisito para los proyectos es que tienen que ser publicados bajo una licencia de software libre.',
+  },
+  {
+    icon: faRocket,
+    title: 'Retos y +3000 € en premios',
+    subtitle:
+      'El único requisito para los proyectos es que tienen que ser publicados bajo una licencia de software libre.',
+  },
+  {
+    icon: faSackDollar,
+    title: '¡Todo incluido!',
+    subtitle:
+      'El único requisito para los proyectos es que tienen que ser publicados bajo una licencia de software libre.',
+  },
+  {
+    icon: faLightbulb,
+    title: 'Organizado por GPUL',
+    subtitle:
+      'El único requisito para los proyectos es que tienen que ser publicados bajo una licencia de software libre.',
+  },
+]
+---
+
+<div id="info">
+  <h1
+    class="mt-20 bg-gradient-to-br from-green-300 to-green-500 bg-clip-text text-center text-4xl text-transparent"
+  >
+    Lorem ipsum sit amet
+  </h1>
+  <h2 class="mt-2 text-center text-2xl text-gray-300">Aquí puedes revivirla</h2>
+  <div class="mt-10 grid grid-cols-1 gap-x-20 gap-y-4 md:grid-cols-2">
+    {
+      infoOptions.map((o) => {
+        return (
+          <div class="flex gap-2">
+            <div class="my-2 flex h-10 w-10 shrink-0 items-center justify-center">
+              <FontAwesomeIcon icon={o.icon} className="h-6" />
+            </div>
+            <div class="py-4">
+              <p class="mb-1 text-xl">{o.title}</p>
+              <p>{o.subtitle}</p>
+            </div>
+          </div>
+        )
+      })
+    }
+  </div>
+</div>
