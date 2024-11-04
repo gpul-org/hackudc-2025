@@ -1,0 +1,49 @@
+---
+import { Image } from 'astro:assets'
+
+import { faEye } from '@fortawesome/free-regular-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import hackers from '../../assets/participantes.jpg'
+---
+
+<h1
+  id="hackathon"
+  class="bg-gradient-to-br from-green-300 to-green-500 bg-clip-text pt-20 text-center text-2xl text-transparent sm:text-3xl md:text-4xl"
+>
+  ¿Qué es un hackathon?
+</h1>
+<div class="mt-8 grid grid-cols-1 gap-4 md:grid-cols-2">
+  <div class="flex flex-col justify-center gap-6 md:order-last">
+    <h2 class="mb-2 text-center font-mono text-2xl font-medium uppercase">
+      <span class="underline decoration-purple-500/50 decoration-wavy"
+        >Hack</span
+      >
+      + <span class="underline decoration-green-500/50 decoration-wavy"
+        >Marathon</span
+      >
+    </h2>
+
+    <p class="mx-auto w-3/4 text-center text-lg">
+      Desarrolla un proyecto en <span class="font-medium text-green-500"
+        >36 horas</span
+      >, básate en las ideas que proponen los patrocinadores o haz algo
+      completamente distinto con tu equipo de hasta <span
+        class="underline decoration-green-500">4 hackers</span
+      >.
+    </p>
+  </div>
+  <div
+    class="group relative mx-auto h-fit w-[95%] transition hover:scale-[1.03] md:w-full"
+  >
+    <a
+      href="https://cloud.gpul.org/index.php/s/mmqpLBmsMkX7cna"
+      target="_blank"
+      class="absolute hidden h-full w-full flex-col justify-center rounded-xl bg-green-900/90 text-center font-medium opacity-0 duration-500 hover:opacity-100 group-hover:flex"
+    >
+      <FontAwesomeIcon icon={faEye} className="h-12" />
+
+      <span>Ver todas las fotos</span>
+    </a>
+    <Image src={hackers} alt="Participantes" class="rounded-xl" />
+  </div>
+</div>

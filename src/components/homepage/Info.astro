@@ -1,0 +1,86 @@
+---
+import { faCalendar } from '@fortawesome/free-regular-svg-icons'
+import {
+  faLightbulb,
+  faLocationArrow,
+  faRocket,
+  faSackDollar,
+  faScroll,
+} from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
+const infoOptions = [
+  {
+    icon: faCalendar,
+    title: '21, 22 y 23 de febrero',
+    subtitle:
+      'El evento tendrá lugar durante tres días, empezando el viernes y terminando el domingo con la entrega de premios.',
+    hover_color: 'group-hover:text-red-400/80',
+  },
+  {
+    icon: faLocationArrow,
+    title: 'Facultad de Informática, UDC',
+    subtitle:
+      'El evento tendrá lugar en la Facultad de Informática de la UDC, en el Campus de Elviña.',
+    hover_color: 'group-hover:text-green-400/80',
+  },
+  {
+    icon: faScroll,
+    title: 'Software libre',
+    subtitle:
+      'El único requisito para los proyectos es que tienen que ser publicados bajo una licencia de software libre.',
+    hover_color: 'group-hover:text-orange-400/80',
+  },
+  {
+    icon: faRocket,
+    title: 'Retos y +3000 € en premios',
+    subtitle:
+      'El único requisito para los proyectos es que tienen que ser publicados bajo una licencia de software libre.',
+    hover_color: 'group-hover:text-blue-400/80',
+  },
+  {
+    icon: faSackDollar,
+    title: '¡Todo incluido!',
+    subtitle:
+      'El único requisito para los proyectos es que tienen que ser publicados bajo una licencia de software libre.',
+    hover_color: 'group-hover:text-yellow-400/80',
+  },
+  {
+    icon: faLightbulb,
+    title: 'Organizado por GPUL',
+    subtitle:
+      'El único requisito para los proyectos es que tienen que ser publicados bajo una licencia de software libre.',
+    hover_color: 'group-hover:text-purple-400/80',
+  },
+]
+---
+
+<h1
+  id="info"
+  class="bg-gradient-to-br from-green-300 to-green-500 bg-clip-text pt-20 text-center text-2xl text-transparent sm:text-3xl md:text-4xl"
+>
+  Lo mínimo que necesitas saber
+</h1>
+<h2 class="mt-2 text-center text-gray-300 sm:text-xl md:text-2xl">
+  Fechas, ubicación, premios...
+</h2>
+<div class="mt-10 grid grid-cols-1 gap-x-20 gap-y-4 md:grid-cols-2">
+  {
+    infoOptions.map((o) => {
+      return (
+        <div class="group flex gap-2">
+          <div class="my-2 flex h-10 w-10 shrink-0 items-center justify-center">
+            <FontAwesomeIcon
+              icon={o.icon}
+              className={`h-6 group-hover:rotate-12 ${o.hover_color} duration-150`}
+            />
+          </div>
+          <div class="py-4">
+            <p class="mb-1 text-xl">{o.title}</p>
+            <p>{o.subtitle}</p>
+          </div>
+        </div>
+      )
+    })
+  }
+</div>

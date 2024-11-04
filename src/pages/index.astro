@@ -1,82 +1,25 @@
 ---
-import { faInstagram, faXTwitter } from '@fortawesome/free-brands-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { Image } from 'astro:assets'
-import Form from '../components/Form'
-import Layout from '../layouts/Layout.astro'
+import FAQ from '../components/homepage/FAQ.astro'
+import Hackathon from '../components/homepage/Hackathon.astro'
+import Hero from '../components/homepage/Hero.astro'
+import Info from '../components/homepage/Info.astro'
+import ScrollOptions from '../components/homepage/ScrollOptions.astro'
+import Sponsors from '../components/homepage/Sponsors.astro'
+import Youtube from '../components/homepage/Youtube.astro'
 
-import hackudcImage from '../assets/hackudc.svg'
+import HeaderLayout from '../layouts/HeaderLayout.astro'
 ---
 
-<Layout title="HackUDC 2025 — Join the waitlist!">
-  <div class="pt-20"></div>
-  <div class="flex h-10 justify-center">
-    <Image
-      src={hackudcImage}
-      alt="HackUDC logo"
-      style="filter: invert(49%) sepia(10%) saturate(542%) hue-rotate(182deg) brightness(88%) contrast(89%);"
-    />
-  </div>
-  <div class="mt-2 flex justify-center gap-2 font-extralight text-gray-500">
-    <div>GPUL</div>
-    <div>|</div>
-    <div>Febrero 2025</div>
-  </div>
-  <div class="mt-4 flex flex-col px-2 align-middle text-4xl">
-    <h1
-      class="inline-block bg-gradient-to-br from-gray-500 to-gray-300 bg-clip-text text-center font-light text-transparent"
-    >
-      Únete a la waitlist para
-    </h1>
-    <h1
-      class="inline-block bg-gradient-to-br from-gray-400 to-fuchsia-300 bg-clip-text text-center text-transparent"
-    >
-      la tercera edición de HackUDC
-    </h1>
-  </div>
-  <div class="mx-auto mt-10 max-w-sm px-2">
-    <div
-      class="mx-auto h-[1px] w-2/4 bg-gradient-to-r from-transparent via-white/10 to-transparent"
-    >
-    </div>
-    <div class="mt-4">
-      <div class="w-full max-w-md p-4">
-        <Form client:load />
-        <div
-          class="mx-auto mt-9 h-[1px] w-2/4 bg-gradient-to-r from-transparent via-white/10 to-transparent"
-        >
-        </div>
-        <div class="mt-6 flex justify-between">
-          <a href="https://x.com/gpul_">
-            <div class="flex space-x-2 font-light">
-              <FontAwesomeIcon
-                icon={faXTwitter}
-                className="h-12 text-white/80"
-              />
-              <div>
-                <p class="text-white/80">Twitter</p>
-                <p class="text-gray-400">@gpul_</p>
-              </div>
-            </div>
-          </a>
-          <div
-            class="w-[1px] bg-gradient-to-b from-transparent via-white/10 to-transparent"
-          >
-          </div>
-          <a href="https://instagram.com/gpul_">
-            <div class="flex justify-end space-x-2 font-light">
-              <FontAwesomeIcon
-                icon={faInstagram}
-                className="h-12 text-white/80"
-              />
-              <div>
-                <p class="text-white/80">Instagram</p>
-                <p class="text-gray-400">@gpul_</p>
-              </div>
-            </div>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</Layout>
+<HeaderLayout
+  title="HackUDC 2025 ― Demuestra tu habilidad creando un proyecto Software Libre, conecta con empresas y desafía tus límites. Habrá más de 3.000 € en premios."
+>
+  <Hero />
+  <ScrollOptions />
+  <Hackathon />
+  <Youtube />
+  <Info />
+  <Sponsors />
+  <FAQ />
+
+  <div class="h-[50px]"></div>
+</HeaderLayout>

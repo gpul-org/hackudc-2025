@@ -1,0 +1,59 @@
+---
+import { faBars } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
+const navLinks = [
+  { text: 'Aftermovie', href: '#aftermovie' },
+  { text: 'Información', href: '#info' },
+  { text: 'Patrocinadores', href: '#sponsors' },
+  { text: 'FAQ', href: '#faq' },
+]
+
+const primaryLink = { text: 'Registro', href: '/registro' }
+---
+
+<header
+  class="mx-auto flex w-full max-w-screen-lg items-center justify-between px-10 py-4"
+>
+  <div class="sm:hidden">
+    <button
+      class="flex items-center rounded-full"
+      onclick="document.getElementById('mobile-menu').classList.toggle('hidden'); document.getElementById('mobile-menu').classList.toggle('flex')"
+    >
+      <FontAwesomeIcon icon={faBars} className="h-5" />
+    </button>
+    <div
+      id="mobile-menu"
+      class="absolute left-0 top-[4.75rem] z-50 hidden w-full flex-col rounded-b-xl bg-[#181818DD] py-2 text-center shadow-2xl backdrop-blur"
+    >
+      {
+        navLinks.map((l) => {
+          return (
+            <a href={l.href} class="p-2">
+              {l.text}
+            </a>
+          )
+        })
+      }
+    </div>
+  </div>
+  <nav class="hidden space-x-8 text-white sm:flex">
+    {
+      navLinks.map((l) => {
+        return (
+          <a href={l.href} class="transition duration-150 hover:text-green-400">
+            {l.text}
+          </a>
+        )
+      })
+    }
+  </nav>
+  <div class="flex items-center">
+    <a
+      class="rounded-full border border-green-700 px-4 py-2 text-green-500 transition duration-150 hover:bg-green-700 hover:text-white"
+      href={primaryLink.href}
+    >
+      {primaryLink.text}
+    </a>
+  </div>
+</header>
