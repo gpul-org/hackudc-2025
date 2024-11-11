@@ -1,6 +1,4 @@
 ---
-import { faTriangleExclamation } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Layout from '../layouts/Layout.astro'
 
 import Form from '../components/Form'
@@ -29,18 +27,12 @@ import Footer from '../components/Footer.astro'
           >HackUDC 2025</span
         >
       </p>
-      <h2 class="mt-2 pb-2 pt-4 text-center text-xl text-gray-300 md:text-2xl">
-        <FontAwesomeIcon
-          icon={faTriangleExclamation}
-          className="max-h-10 text-yellow-300"
-        /> El registro aún no está abierto.
-      </h2>
 
       <!-- Formulario -->
-      <div class="bg-animated mx-auto mt-12 w-full rounded-xl p-0.5 md:w-3/4">
+      <div class="bg-animated mx-auto mt-12 w-full rounded-xl p-0.5">
         <div class="rounded-xl bg-[#181818] px-8 py-4">
           <h2 class="pt-4 text-center text-2xl">
-            Apúntate a la waitlist y<br /> te avisaremos cuando se abra el registro
+            Inscríbete en HackUDC 2025
 
             <div class="mx-auto pb-4 pt-8 md:px-4">
               <Form client:load />
