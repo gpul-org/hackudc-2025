@@ -1,8 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro'
 
-import Form from '../components/Form'
 import Logo from '../components/Logo.astro'
+import Form from '../components/register/Form'
 
 import Footer from '../components/Footer.astro'
 ---
@@ -30,14 +30,8 @@ import Footer from '../components/Footer.astro'
 
       <!-- Formulario -->
       <div class="bg-animated mx-auto mt-12 w-full rounded-xl p-0.5">
-        <div class="rounded-xl bg-[#181818] px-8 py-4">
-          <h2 class="pt-4 text-center text-2xl">
-            Inscríbete en HackUDC 2025
-
-            <div class="mx-auto pb-4 pt-8 md:px-4">
-              <Form client:load />
-            </div>
-          </h2>
+        <div class="rounded-xl bg-[#181818] p-4 md:p-8">
+          <Form client:load />
         </div>
       </div>
     </div>
