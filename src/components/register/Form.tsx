@@ -6,6 +6,11 @@ import {
   faSchool,
   faMapLocation,
   faGlobeEurope,
+  faGraduationCap,
+  faInstitution,
+  faWheatAwnCircleExclamation,
+  faShirt,
+  faPen,
 } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useState } from 'react'
@@ -14,6 +19,7 @@ import toast from 'react-hot-toast'
 import InputText from './InputText'
 import InputSelect from './InputSelect'
 import InputCheckbox from './InputCheckbox'
+import InputTextArea from './InputTextArea'
 
 export default function Form() {
   const [loading, setLoading] = useState(false)
@@ -67,20 +73,89 @@ export default function Form() {
         icon={faPhone}
       />
       <InputText id="calendarInput" type="date" label="Fecha de nacimiento" required icon={faCalendar} />
-      <InputText id="studyLocationInput" label="Lugar de estudios" placeholder="A Coruña" required icon={faSchool} />
+      <InputText id="studyLocationInput" label="Lugar de estudios" placeholder="Universidade da Coruña" required icon={faSchool} />
       <InputText id="city" label="Lugar de residencia" placeholder="Ferrol" required icon={faMapLocation} />
       <InputSelect
-        id="countrySelect"
-        label="País"
+        id="studyLevelInput"
+        label="Nivel de estudios"
         required
-        icon={faGlobeEurope}
-        tooltip="Selecciona tu país de residencia."
+        icon={faInstitution}
+        tooltip="Selecciona tu nivel de estudios."
         options={[
-          { value: 'es', label: 'España' },
-          { value: 'it', label: 'Italia' },
-          { value: 'us', label: 'Estados Unidos' },
+          { value: 'universidad', label: 'Universitarios' },
+          { value: 'fp', label: 'Formación Profesional' },
+          { value: 'secundaria', label: 'Secundarios' },
+          { value: 'otros', label: 'Otros' },
         ]}
       />
+      <InputSelect
+        id="studyCourseInput"
+        label="Curso"
+        required
+        icon={faGraduationCap}
+        options = {[
+          {value: '1', label: '1º'},
+          {value: '2', label: '2º'},
+          {value: '3', label: '3º'},
+          {value: '4', label: '4º'},
+          {value: 'no', label: 'No aplica'},
+        ]}
+      />
+      <InputSelect
+        id="genderInput"
+        label="Género"
+        required
+        icon={faGraduationCap}
+        tooltip="Requerido por la Xunta a nivel estadístico"
+        options = {[
+          {value: 'm', label: 'Masculino'},
+          {value: 'f', label: 'Femenino'},
+          {value: 'no-binario', label: 'No binario'},
+          {value: 'otro', label: 'Otro'},
+          {value: 'no', label: 'Prefiero no decirlo'},
+        ]}
+      />
+      <InputSelect
+        id="foodRestrictionsInput"
+        label="Restricciones alimentarias"
+        required
+        icon={faWheatAwnCircleExclamation}
+        options = {[
+          {value: 'sin', label: 'Sin restricciones'},
+          {value: 'vegano', label: 'Vegano'},
+          {value: 'vegetariano', label: 'Vegetariano'},
+          {value: 'sin-gluten', label: 'Sin glúten'},
+          {value: 'otro', label: 'Otras'},
+        ]}
+      />
+      <InputSelect
+        id="shirtSizeInput"
+        label="Talla de camiseta"
+        required
+        icon={faShirt}
+        options = {[
+          {value: 'S', label: 'S'},
+          {value: 'M', label: 'M'},
+          {value: 'L', label: 'L'},
+          {value: 'XL', label: 'XL'},
+          {value: 'XXL', label: 'XXL'},
+        ]}
+      />
+      <InputSelect
+        id="creditsInput"
+        label="¿Solicitar créditos ECTS?"
+        required
+        tooltip="Solo pueden solicitar créditos los estudiantes de la UDC"
+        icon={faShirt}
+        options = {[
+          {value: 'sí', label: 'Sí'},
+          {value: 'no', label: 'No'},
+        ]}
+      />
+      <div class="col-span-2">
+        <InputText id="city" label="¿Por qué quieres participar en HackUDC?" placeholder="..." required icon={faPen}/>
+      </div>
+      <InputTextArea id="texto" label="¿Por qué quieres participar en HackUDC?" placeholder="..." required icon={faPen} />
       <div className="col-span-2 flex flex-col gap-4">
         <InputCheckbox
           id="termsCheckbox"
