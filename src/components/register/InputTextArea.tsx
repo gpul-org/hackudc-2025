@@ -12,16 +12,9 @@ interface InputTextProps {
   tooltip?: string
 }
 
-export default function InputText({
-  id,
-  label,
-  required = false,
-  placeholder = '',
-  icon,
-  tooltip,
-}: InputTextProps) {
+export default function InputText({ id, label, required = false, placeholder = '', icon, tooltip }: InputTextProps) {
   return (
-    <div className="w-full col-span-2">
+    <div className="col-span-2 w-full">
       <div className="m-1 flex items-center space-x-1">
         {required && <span className="text-red-500">*</span>}
         <label htmlFor={id} className="text-sm text-white/75">
@@ -44,6 +37,7 @@ export default function InputText({
         )}
         <textarea
           id={id}
+          name={id}
           required={required}
           className="block w-full rounded-lg border border-white/20 bg-white/5 p-2.5 pl-10 font-light text-white placeholder-white/50 focus:border-transparent focus:outline-none focus:ring-[1px] focus:ring-green-500 focus:ring-opacity-60"
           placeholder={placeholder}

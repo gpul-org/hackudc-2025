@@ -13,6 +13,7 @@ export default function InputCheckbox({ id, label, required = false, tooltip }: 
     <div className="flex w-full items-center space-x-2">
       <input
         id={id}
+        name={id}
         type="checkbox"
         required={required}
         className="h-5 w-5 rounded border border-white/20 bg-white/5 text-green-500 focus:ring-[1px] focus:ring-green-500 focus:ring-opacity-60"

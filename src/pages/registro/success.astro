@@ -1,0 +1,74 @@
+---
+import Footer from '../../components/Footer.astro'
+import Logo from '../../components/Logo.astro'
+import Layout from '../../layouts/Layout.astro'
+---
+
+<Layout title={'Registro - HackUDC 2025'}>
+  <div class="flex min-h-screen flex-col">
+    <div class="mx-auto mt-6 w-full max-w-screen-lg grow px-2">
+      <a
+        href="/"
+        class="hover-bg-green-700 rounded-full border border-green-700 px-4 py-2 text-green-500 transition duration-150 hover:text-white"
+      >
+        Volver a inicio
+      </a>
+
+      <div class="mx-auto mt-14 w-[300px] sm:w-[400px] md:w-[500px]">
+        <Logo />
+      </div>
+      <p class="mt-14 text-center text-3xl sm:text-4xl md:text-5xl">
+        ¡Te has registrado para
+        <span
+          class="inline-block bg-gradient-to-br from-green-700 via-green-500 to-green-700 bg-clip-text font-medium text-transparent"
+        >
+          HackUDC 2025
+        </span>
+        !
+      </p>
+
+      <!-- Success message -->
+      <div class="bg-animated mx-auto mt-12 w-full rounded-xl p-0.5">
+        <div class="rounded-xl bg-[#181818] p-4 md:p-8">
+          <p class="text-center text-lg text-white/90">
+            Te hemos enviado un correo electrónico confirmando que hemos recibido tu solicitud.
+            <br />
+            Más adelante te enviaremos otro correo notificándote si has sido aceptado para participar en HackUDC 2025.
+            <br />
+            Si no recibes el primer correo en las próximas 24 horas, ponte en contacto con nosotros en
+            <a href="mailto:hackudc@gpul.org" class="text-green-500 hover:underline">hackudc@gpul.org</a>.
+          </p>
+
+          <p class="mt-6 text-center text-lg text-white/90">
+            Mantente atento a los próximos correos con más información sobre el evento. ¡Comparte el evento con tus
+            amigos, conocidos y en redes sociales!
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="h-[100px]"></div>
+    <Footer />
+  </div>
+</Layout>
+
+<style>
+  .bg-animated:hover {
+    animation: gradient 500ms ease;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+  }
+
+  .bg-animated {
+    background: linear-gradient(-45deg, #22c55e, #15803d 50%, #242424 50% 100%);
+    background-size: 200% 200%;
+  }
+
+  @keyframes gradient {
+    0% {
+      background-position: 0% 0%;
+    }
+    100% {
+      background-position: 100% 100%;
+    }
+  }
+</style>

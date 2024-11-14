@@ -5,7 +5,6 @@ import {
   faCalendar,
   faSchool,
   faMapLocation,
-  faGlobeEurope,
   faGraduationCap,
   faInstitution,
   faWheatAwnCircleExclamation,
@@ -20,6 +19,7 @@ import InputText from './InputText'
 import InputSelect from './InputSelect'
 import InputCheckbox from './InputCheckbox'
 import InputTextArea from './InputTextArea'
+import InputFile from './InputFile'
 
 export default function Form() {
   const [loading, setLoading] = useState(false)
@@ -27,35 +27,29 @@ export default function Form() {
   async function handleSubmit(event: React.SyntheticEvent<HTMLFormElement>) {
     event.preventDefault()
     setLoading(true)
-    const form = event.currentTarget
-    const formElements = form.elements as typeof form.elements & {
-      nameInput: HTMLInputElement
-      emailInput: HTMLInputElement
-    }
-    const name = formElements.nameInput.value
-    const email = formElements.emailInput.value
+
+    const formData = new FormData(event.currentTarget)
 
     try {
-      const request = fetch('https://activepieces.gpul.org/api/v1/webhooks/vk6LQyvRYVhV5AAhCWM7N/sync', {
+      const request = fetch('https://activepieces.gpul.org/api/v1/webhooks/o15OjmGTxRFoks4ESnhrC/sync', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ name, email }),
+        body: formData,
       })
 
       toast.promise(request, {
         loading: 'Un momentito...',
-        success: '¡Listo, estás en la lista!',
+        success: '¡Listo, estás registrado!',
         error: 'Ha ocurrido un error...',
       })
 
       await request
 
-      // TODO: redirect to some other page with message
-      // or show modal and after dismiss redirect to /
+      setTimeout(() => {
+        window.location.href = '/registro/success'
+      }, 2000)
     } catch (error) {
       console.error('Error:', error)
+    } finally {
       setLoading(false)
     }
   }
@@ -73,14 +67,40 @@ export default function Form() {
         icon={faPhone}
       />
       <InputText id="calendarInput" type="date" label="Fecha de nacimiento" required icon={faCalendar} />
-      <InputText id="studyLocationInput" label="Lugar de estudios" placeholder="Universidade da Coruña" required icon={faSchool} />
       <InputText id="city" label="Lugar de residencia" placeholder="Ferrol" required icon={faMapLocation} />
+      <InputText
+        id="studyLocationInput"
+        label="Lugar de estudios"
+        placeholder="Universidade da Coruña"
+        required
+        icon={faSchool}
+      />
+      <InputText
+        id="studyNameInput"
+        label="Nombre de los estudios"
+        placeholder="Ingeniería informática"
+        required
+        icon={faGraduationCap}
+      />
+      <InputSelect
+        id="studyCourseInput"
+        label="Curso"
+        required
+        icon={faGraduationCap}
+        options={[
+          { value: '1', label: '1º' },
+          { value: '2', label: '2º' },
+          { value: '3', label: '3º' },
+          { value: '4', label: '4º' },
+          { value: '5', label: '5º' },
+          { value: 'no', label: 'No aplica' },
+        ]}
+      />
       <InputSelect
         id="studyLevelInput"
         label="Nivel de estudios"
         required
         icon={faInstitution}
-        tooltip="Selecciona tu nivel de estudios."
         options={[
           { value: 'universidad', label: 'Universitarios' },
           { value: 'fp', label: 'Formación Profesional' },
@@ -89,30 +109,15 @@ export default function Form() {
         ]}
       />
       <InputSelect
-        id="studyCourseInput"
-        label="Curso"
+        id="creditsInput"
+        label="¿Solicitar créditos ECTS?"
         required
-        icon={faGraduationCap}
-        options = {[
-          {value: '1', label: '1º'},
-          {value: '2', label: '2º'},
-          {value: '3', label: '3º'},
-          {value: '4', label: '4º'},
-          {value: 'no', label: 'No aplica'},
-        ]}
-      />
-      <InputSelect
-        id="genderInput"
-        label="Género"
-        required
-        icon={faGraduationCap}
-        tooltip="Requerido por la Xunta a nivel estadístico"
-        options = {[
-          {value: 'm', label: 'Masculino'},
-          {value: 'f', label: 'Femenino'},
-          {value: 'no-binario', label: 'No binario'},
-          {value: 'otro', label: 'Otro'},
-          {value: 'no', label: 'Prefiero no decirlo'},
+        tooltip="Solo podemos ortorgar créditos a los estudiantes de la UDC, que dependiendo de sus estudios, podrán reconocer según normativa."
+        icon={faShirt}
+        defaultValue="no"
+        options={[
+          { value: 'si', label: 'Sí' },
+          { value: 'no', label: 'No' },
         ]}
       />
       <InputSelect
@@ -120,12 +125,12 @@ export default function Form() {
         label="Restricciones alimentarias"
         required
         icon={faWheatAwnCircleExclamation}
-        options = {[
-          {value: 'sin', label: 'Sin restricciones'},
-          {value: 'vegano', label: 'Vegano'},
-          {value: 'vegetariano', label: 'Vegetariano'},
-          {value: 'sin-gluten', label: 'Sin glúten'},
-          {value: 'otro', label: 'Otras'},
+        options={[
+          { value: 'sin', label: 'Sin restricciones' },
+          { value: 'vegano', label: 'Vegano' },
+          { value: 'vegetariano', label: 'Vegetariano' },
+          { value: 'sin-gluten', label: 'Sin glúten' },
+          { value: 'otro', label: 'Otras' },
         ]}
       />
       <InputSelect
@@ -133,42 +138,36 @@ export default function Form() {
         label="Talla de camiseta"
         required
         icon={faShirt}
-        options = {[
-          {value: 'S', label: 'S'},
-          {value: 'M', label: 'M'},
-          {value: 'L', label: 'L'},
-          {value: 'XL', label: 'XL'},
-          {value: 'XXL', label: 'XXL'},
+        defaultValue="L"
+        options={[
+          { value: 'S', label: 'S' },
+          { value: 'M', label: 'M' },
+          { value: 'L', label: 'L' },
+          { value: 'XL', label: 'XL' },
+          { value: 'XXL', label: 'XXL' },
         ]}
       />
-      <InputSelect
-        id="creditsInput"
-        label="¿Solicitar créditos ECTS?"
+      <InputTextArea
+        id="motivationInput"
+        label="¿Por qué quieres participar en HackUDC?"
+        placeholder="Para retarme, conocer gente nueva y..."
         required
-        tooltip="Solo pueden solicitar créditos los estudiantes de la UDC"
-        icon={faShirt}
-        options = {[
-          {value: 'sí', label: 'Sí'},
-          {value: 'no', label: 'No'},
-        ]}
+        icon={faPen}
       />
-      <div class="col-span-2">
-        <InputText id="city" label="¿Por qué quieres participar en HackUDC?" placeholder="..." required icon={faPen}/>
-      </div>
-      <InputTextArea id="texto" label="¿Por qué quieres participar en HackUDC?" placeholder="..." required icon={faPen} />
+      <InputFile id="cvInput" label="Adjuntar CV (PDF)" required accept=".pdf" />
       <div className="col-span-2 flex flex-col gap-4">
+        <InputCheckbox id="cvCheckbox" label="Quiero compartir mi CV con las empresas patrocinadoras (recomendado)." />
         <InputCheckbox
           id="termsCheckbox"
-          label="Acepto los términos y condiciones"
+          label="Acepto los términos y condiciones y he leído el código de conducta."
           required
-          tooltip="Debes aceptar los términos y condiciones para continuar."
         />
-        <InputCheckbox id="checkbox2" label="Acepto los términos de ejemplo" required />
-        <InputCheckbox id="checkbox3" label="Acepto los términos de ejemplo" required />
         <div>
           <button
             type="submit"
-            className="hover group relative col-span-2 w-full rounded-lg bg-green-900 p-2.5 text-center font-light text-white/75"
+            className={`hover group relative col-span-2 w-full rounded-lg p-2.5 text-center font-light ${
+              loading ? 'cursor-not-allowed bg-gray-500' : 'bg-green-900 text-white/75'
+            }`}
             disabled={loading}
           >
             Registrarme en HackUDC
