@@ -31,12 +31,15 @@ export default function Form() {
     const formData = new FormData(event.currentTarget)
 
     try {
+      toast.loading('Un momentito...');
       const response = await fetch('https://activepieces.gpul.org/api/v1/webhooks/TK1VWrA48BEL7EJpGvnnr/sync', {
         method: 'POST',
         body: formData,
       })
 
+
       if (response.ok) {
+        toast.remove();
         toast.success('¡Listo, estás registrado!')
 
         // Await the timeout for redirection to prevent re-clicking
@@ -44,6 +47,7 @@ export default function Form() {
 
         window.location.href = '/registro/success'
       } else {
+        toast.remove();
         const errorData = await response.json() // Optional: parse error response for more details
         console.error('Error response:', errorData)
         toast.error('Ha ocurrido un error...')
