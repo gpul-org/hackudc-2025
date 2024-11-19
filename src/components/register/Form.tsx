@@ -31,24 +31,26 @@ export default function Form() {
     const formData = new FormData(event.currentTarget)
 
     try {
-      const request = fetch('https://activepieces.gpul.org/api/v1/webhooks/TK1VWrA48BEL7EJpGvnnr/sync', {
+      const response = await fetch('https://activepieces.gpul.org/api/v1/webhooks/TK1VWrA48BEL7EJpGvnnr/sync', {
         method: 'POST',
         body: formData,
       })
 
-      toast.promise(request, {
-        loading: 'Un momentito...',
-        success: '¡Listo, estás registrado!',
-        error: 'Ha ocurrido un error...',
-      })
+      if (response.ok) {
+        toast.success('¡Listo, estás registrado!')
 
-      await request
+        // Await the timeout for redirection to prevent re-clicking
+        await new Promise((resolve) => setTimeout(resolve, 2000))
 
-      setTimeout(() => {
         window.location.href = '/registro/success'
-      }, 2000)
+      } else {
+        const errorData = await response.json() // Optional: parse error response for more details
+        console.error('Error response:', errorData)
+        toast.error('Ha ocurrido un error...')
+      }
     } catch (error) {
       console.error('Error:', error)
+      toast.error('Ha ocurrido un error...')
     } finally {
       setLoading(false)
     }
