@@ -31,7 +31,7 @@ export default function Form() {
     const formData = new FormData(event.currentTarget)
 
     try {
-      const request = fetch('https://activepieces.gpul.org/api/v1/webhooks/o15OjmGTxRFoks4ESnhrC/sync', {
+      const request = fetch('https://activepieces.gpul.org/api/v1/webhooks/TK1VWrA48BEL7EJpGvnnr/sync', {
         method: 'POST',
         body: formData,
       })
