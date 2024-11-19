@@ -8,10 +8,20 @@ interface Props {
 }
 
 const { frontmatter } = Astro.props
+
+import Footer from '../components/Footer.astro'
 ---
 
 <Layout title={frontmatter.title}>
+  <div class="mx-auto mt-6 w-full max-w-screen-lg grow px-2">
+    <a
+      href="/"
+      class="hover-bg-green-700 rounded-full border border-green-700 px-4 py-2 text-green-500 transition duration-150 hover:text-white"
+      >Volver a inicio</a
+    >
+  </div>
   <div class="prose prose-invert mx-auto my-10 max-w-screen-md px-3">
     <slot />
   </div>
+  <Footer />
 </Layout>
