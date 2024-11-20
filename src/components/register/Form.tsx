@@ -10,6 +10,7 @@ import {
   faWheatAwnCircleExclamation,
   faShirt,
   faPen,
+  faTicket,
 } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useState } from 'react'
@@ -31,15 +32,14 @@ export default function Form() {
     const formData = new FormData(event.currentTarget)
 
     try {
-      toast.loading('Un momentito...');
+      toast.loading('Un momentito...')
       const response = await fetch('https://activepieces.gpul.org/api/v1/webhooks/TK1VWrA48BEL7EJpGvnnr/sync', {
         method: 'POST',
         body: formData,
       })
 
-
       if (response.ok) {
-        toast.remove();
+        toast.remove()
         toast.success('¡Listo, estás registrado!')
 
         // Await the timeout for redirection to prevent re-clicking
@@ -47,7 +47,7 @@ export default function Form() {
 
         window.location.href = '/registro/success'
       } else {
-        toast.remove();
+        toast.remove()
         const errorData = await response.json() // Optional: parse error response for more details
         console.error('Error response:', errorData)
         toast.error('Ha ocurrido un error...')
@@ -119,7 +119,7 @@ export default function Form() {
         label="¿Solicitar créditos ECTS?"
         required
         tooltip="Solo podemos ortorgar créditos a los estudiantes de la UDC, que dependiendo de sus estudios, podrán reconocer según normativa."
-        icon={faShirt}
+        icon={faTicket}
         defaultValue="no"
         options={[
           { value: 'si', label: 'Sí' },
