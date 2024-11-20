@@ -53,10 +53,10 @@ export default function InputSelect({
           name={id}
           required={required}
           defaultValue={defaultValue}
-          className="block w-full rounded-lg border border-white/20 bg-white/5 p-2.5 pl-10 font-light text-white placeholder-white/50 focus:border-transparent focus:outline-none focus:ring-[1px] focus:ring-green-500 focus:ring-opacity-60"
+          className="xblock w-full rounded-lg border border-white/20 bg-white/5 p-2.5 pl-10 font-light text-white placeholder-white/50 focus:border-transparent focus:outline-none focus:ring-[1px] focus:ring-green-500 focus:ring-opacity-60"
         >
           {options.map((option) => (
-            <option key={option.value} value={option.value}>
+            <option key={option.value} value={option.value} className="text-black">
               {option.label}
             </option>
           ))}
