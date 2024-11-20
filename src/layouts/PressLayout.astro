@@ -1,0 +1,39 @@
+---
+import Layout from './Layout.astro'
+
+export interface Props {
+  frontmatter: {
+    title?: string
+  }
+}
+
+const { frontmatter } = Astro.props
+---
+
+<Layout title={frontmatter.title} light>
+  <section class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+    <div class="my-5 flex items-center justify-between">
+      <h2 class="font-sans text-4xl font-bold">{frontmatter.title}</h2>
+      <img src="https://gpul.org/assets/images/logos/logo_gpul.png" alt="GPUL Logo" class="h-28 !shadow-none" />
+    </div>
+    <div
+      class="prose-md prose-headings:font-heading prose-headings:leading-tighter prose prose-lg mx-auto mt-8 max-w-4xl prose-headings:font-bold prose-headings:tracking-tighter prose-a:text-blue-600 prose-img:rounded-md prose-img:shadow-lg"
+    >
+      <slot />
+      <div class="mt-4 flex justify-between">
+        <p>
+          <span class="font-bold">Organiza: <br /> Grupo de Programadores e Usuarios de Linux <br /></span>
+          Web: <a href="https://gpul.org">https://gpul.org</a>
+          <br />
+          X (Twitter): <a href="https://x.com/gpul_/">@gpul_</a>
+          <br />
+          LinkedIn: <a href="https://www.linkedin.com/company/gpul/">GPUL</a>
+        </p>
+        <p class="text-right">
+          <span class="font-bold">Contacto: <br /> Jorge Teixeira Crespo <br /> Organización de HackUDC </span><br /> jorge.teixeira@gpul.org
+          <br /> (+34) 662 344 658
+        </p>
+      </div>
+    </div>
+  </section>
+</Layout>
