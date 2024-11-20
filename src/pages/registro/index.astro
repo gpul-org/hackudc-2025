@@ -1,12 +1,10 @@
 ---
-import { faTriangleExclamation } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import Layout from '../layouts/Layout.astro'
+import Layout from '../../layouts/Layout.astro'
 
-import Form from '../components/Form'
-import Logo from '../components/Logo.astro'
+import Logo from '../../components/Logo.astro'
+import Form from '../../components/register/Form'
 
-import Footer from '../components/Footer.astro'
+import Footer from '../../components/Footer.astro'
 ---
 
 <Layout title={'Registro - HackUDC 2025'}>
@@ -29,23 +27,11 @@ import Footer from '../components/Footer.astro'
           >HackUDC 2025</span
         >
       </p>
-      <h2 class="mt-2 pb-2 pt-4 text-center text-xl text-gray-300 md:text-2xl">
-        <FontAwesomeIcon
-          icon={faTriangleExclamation}
-          className="max-h-10 text-yellow-300"
-        /> El registro aún no está abierto.
-      </h2>
 
       <!-- Formulario -->
-      <div class="bg-animated mx-auto mt-12 w-full rounded-xl p-0.5 md:w-3/4">
-        <div class="rounded-xl bg-[#181818] px-8 py-4">
-          <h2 class="pt-4 text-center text-2xl">
-            Apúntate a la waitlist y<br /> te avisaremos cuando se abra el registro
-
-            <div class="mx-auto pb-4 pt-8 md:px-4">
-              <Form client:load />
-            </div>
-          </h2>
+      <div class="bg-animated mx-auto mt-12 w-full rounded-xl p-0.5">
+        <div class="rounded-xl bg-[#181818] p-4 md:p-8">
+          <Form client:load />
         </div>
       </div>
     </div>
