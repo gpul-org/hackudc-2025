@@ -1,17 +1,30 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faInfoCircle } from '@fortawesome/free-solid-svg-icons'
 interface InputFileProps {
   id: string
   label: string
   required?: boolean
   accept?: string
+  tooltip?: string
 }
 
-export default function InputFile({ id, label, required = false, accept }: InputFileProps) {
+export default function InputFile({ id, label, required = false, accept, tooltip }: InputFileProps) {
   return (
     <div className="flex flex-col gap-1">
-      <label htmlFor={id} className="text-sm font-light text-white/75">
-        {required && <span className="text-red-500">* </span>}
-        {label}
-      </label>
+      <div className="m-1 flex items-center space-x-1">
+        <label htmlFor={id} className="text-sm font-light text-white/75">
+          {required && <span className="text-red-500">* </span>}
+          {label}
+        </label>
+        {tooltip && (
+          <div className="group relative flex items-center" tabIndex={0}>
+            <FontAwesomeIcon icon={faInfoCircle} className="h-4 w-4 cursor-pointer text-white/50" />
+            <div className="absolute left-0 top-full z-10 mt-1 hidden w-max max-w-xs rounded-lg bg-gray-800/90 p-2 text-xs text-white shadow-md group-hover:block group-focus:block">
+              {tooltip}
+            </div>
+          </div>
+        )}
+      </div>
       <div className="relative">
         <input
           id={id}

@@ -158,9 +158,10 @@ export default function Form() {
         label="¿Por qué quieres participar en HackUDC?"
         placeholder="Para retarme, conocer gente nueva y..."
         required
+        tooltip="Explica brevemente por qué quieres participar. En caso de que haya más solicitudes que plazas, además de la fecha de inscripción y el CV, esto nos ayudará a aceptar a los participantes que mejor encajen y creamos que aprovecharán el hackathon."
         icon={faPen}
       />
-      <InputFile id="cvInput" label="Adjuntar CV (PDF)" required accept=".pdf" />
+      <InputFile id="cvInput" label="Adjuntar CV (PDF)" required accept=".pdf" tooltip="Añade aquí tu CV. Nos ayudará a seleccionar a aquellos participantes que mejor encajen en caso de tener más solicitudes que plazas (además del campo '¿Por qué quieres participar?' y la fecha de inscripción), también puedes compartirlo con las empresas patrocinadoras del evento. Si aún no tienes un CV y no sabes que poner, no te preocupes, indica tus estudios, tus intereses y pon un enlace a tus proyectos y a tu perfil de github."/>
       <div className="col-span-2 flex flex-col gap-4">
         <InputCheckbox id="cvCheckbox" label="Quiero compartir mi CV con las empresas patrocinadoras (recomendado)." />
         <InputCheckbox
