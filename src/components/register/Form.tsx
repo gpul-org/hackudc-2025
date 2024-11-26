@@ -184,7 +184,7 @@ export default function Form() {
           </button>
           <p className="col-span-2 mt-2 text-center text-xs font-light text-white/75">
             Al enviar, aceptas la{' '}
-            <a href="/privacy" className="underline">
+            <a href="/privacidad" className="underline">
               política de privacidad
             </a>
             .

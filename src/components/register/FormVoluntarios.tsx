@@ -57,7 +57,9 @@ export default function Form() {
 
   return (
     <form className="flex flex-col gap-2 text-base sm:grid sm:grid-cols-2 sm:gap-4" onSubmit={handleSubmit}>
+      <div className="col-span-2 w-full">
       <InputText id="nameInput" label="Nombre completo" placeholder="John Doe" required icon={faUser} />
+      </div>
       <InputText id="emailInput" label="Email" type="email" placeholder="john@example.com" required icon={faEnvelope} />
       <InputText
         id="phoneInput"
@@ -66,16 +68,6 @@ export default function Form() {
         placeholder="612345789"
         required
         icon={faPhone}
-      />
-      <InputSelect
-        id="voluntaryTypeInput"
-        label="¿Con qué quieres ayudar?"
-        required
-        icon={faHandshake}
-        options={[
-          { value: 'mentor', label: 'Mentor' },
-          { value: 'voluntario', label: 'Voluntario' },
-        ]}
       />
       <InputSelect
         id="foodRestrictionsInput"
@@ -109,7 +101,7 @@ export default function Form() {
         label="¿Por qué quieres ayudar en HackUDC?"
         placeholder="Después de particiar en otras ediciones, me apetece probar esta experiencia porque..."
         required
-        tooltip="Explica brevemente por qué quieres ayudar. En caso de que apuntarte como mentor, explícanos por qué te apetece ayudar y cuáles son tus conocimientos, además de si tienes alguna experiencia enseñando o ayudando con proyectos de programación."
+        tooltip="Explica brevemente por qué quieres ser mentor y cuáles son tus conocimientos, además de si tienes alguna experiencia enseñando o ayudando con proyectos de programación."
         icon={faPen}
       />
       <InputFile id="cvInput" label="Adjuntar CV (PDF)" required accept=".pdf" tooltip="Añade aquí tu CV. Nos ayudará a seleccionar a aquellos voluntarios que mejor encajen, también puedes compartirlo con las empresas patrocinadoras del evento."/>
@@ -135,7 +127,7 @@ export default function Form() {
           </button>
           <p className="col-span-2 mt-2 text-center text-xs font-light text-white/75">
             Al enviar, aceptas la{' '}
-            <a href="/privacy" className="underline">
+            <a href="/privacidad" className="underline">
               política de privacidad
             </a>
             .
