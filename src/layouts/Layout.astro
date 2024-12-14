@@ -60,5 +60,14 @@ const { title, light = false } = Astro.props
     body {
       font-family: 'Roboto', sans-serif;
     }
+    @supports (-webkit-appearance: none) and (-webkit-backdrop-filter: none) {
+      select {
+        -webkit-appearance: none;
+      }
+      input[type="date"] {
+        -webkit-appearance: none;
+        height: 3rem;
+      }
+    }
   </style>
 </html>
