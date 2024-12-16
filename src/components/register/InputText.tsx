@@ -31,7 +31,7 @@ export default function InputText({
         {tooltip && (
           <div className="group relative flex items-center" tabIndex={0} aria-label={tooltip}>
             <FontAwesomeIcon icon={faInfoCircle} className="h-4 w-4 cursor-pointer text-white/50" />
-            <div className="absolute left-0 top-full z-10 mt-1 hidden w-max max-w-xs rounded-lg bg-black p-2 text-xs text-white shadow-md group-hover:block group-focus:block">
+            <div className="absolute left-1/2 top-full z-10 mt-1 hidden w-max max-w-xs -translate-x-1/2 rounded-lg bg-gray-800/90 p-2 text-xs text-white shadow-md group-hover:block group-focus:block">
               {tooltip}
             </div>
           </div>
