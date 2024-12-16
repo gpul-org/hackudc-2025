@@ -1,3 +1,10 @@
+---
+import { Image } from 'astro:assets'
+
+import logoDenodo from '../../assets/sponsors/denodo.svg'
+import logoGradiant from '../../assets/sponsors/gradiant.svg'
+---
+
 <h1
   id="sponsors"
   class="bg-gradient-to-br from-green-300 to-green-500 bg-clip-text pt-20 text-center text-2xl text-transparent sm:text-3xl md:text-4xl"
@@ -6,21 +13,31 @@
 </h1>
 <h2 class="mt-2 text-center text-gray-300 sm:text-xl md:text-2xl">Sin ellos esto nunca sería posible</h2>
 <h3 class="mt-8 text-center font-mono text-xl md:text-2xl">root</h3>
-<div class="mx-auto mt-4 h-40 w-[400px] max-w-full rounded-lg bg-white/20"></div>
+<a href="https://gradiant.org/">
+  <div
+    class="mx-auto mt-4 flex h-40 w-[400px] max-w-full flex-col justify-center overflow-hidden rounded-lg bg-white/75 p-2 text-center"
+  >
+    <Image src={logoGradiant} alt="Logo Gradiant" class="h-full w-full object-contain" />
+  </div>
+</a>
 <h3 class="mt-8 text-center font-mono text-xl md:text-2xl">admin</h3>
 <div class="mt-4 grid grid-cols-1 gap-8 px-3 sm:grid-cols-2 md:grid-cols-3">
-  <div class="h-32 rounded-lg bg-white/20"></div>
-  <div class="h-32 rounded-lg bg-white/20"></div>
-  <div class="h-32 rounded-lg bg-white/20"></div>
-  <div class="h-32 rounded-lg bg-white/20"></div>
-  <div class="h-32 rounded-lg bg-white/20"></div>
-  <div class="h-32 rounded-lg bg-white/20"></div>
+  <a href="https://www.denodo.com/es">
+    <div class="flex h-32 flex-col justify-center overflow-hidden rounded-lg bg-white/75 p-2 text-center">
+      <Image src={logoDenodo} alt="Logo Denodo" class="h-full w-full object-contain" />
+    </div>
+  </a>
+  <div class="flex h-32 flex-col justify-center rounded-lg bg-white/20 text-center">Próximamente</div>
+  <div class="flex h-32 flex-col justify-center rounded-lg bg-white/20 text-center">Próximamente</div>
+  <div class="flex h-32 flex-col justify-center rounded-lg bg-white/20 text-center">Próximamente</div>
+  <div class="flex h-32 flex-col justify-center rounded-lg bg-white/20 text-center">Próximamente</div>
+  <div class="flex h-32 flex-col justify-center rounded-lg bg-white/20 text-center">Próximamente</div>
 </div>
 <h3 class="mt-12 text-center font-mono text-xl md:text-2xl">user</h3>
 <div class="mt-4 grid grid-cols-1 gap-7 px-8 sm:grid-cols-3 md:gap-12 md:px-14">
-  <div class="h-24 rounded-lg bg-white/20"></div>
-  <div class="h-24 rounded-lg bg-white/20"></div>
-  <div class="h-24 rounded-lg bg-white/20"></div>
+  <div class="flex h-24 flex-col justify-center rounded-lg bg-white/20 text-center">Próximamente</div>
+  <div class="flex h-24 flex-col justify-center rounded-lg bg-white/20 text-center">Próximamente</div>
+  <div class="flex h-24 flex-col justify-center rounded-lg bg-white/20 text-center">Próximamente</div>
 </div>
 
 <h3 id="sponsor-info" class="mt-12 scroll-m-28 px-10 text-center text-gray-200 sm:px-32 sm:text-lg md:px-52 md:text-xl">
