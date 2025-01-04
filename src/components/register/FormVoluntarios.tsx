@@ -56,7 +56,7 @@ export default function Form() {
   }
 
   return (
-    <form className="flex flex-col gap-2 text-base sm:grid sm:grid-cols-2 sm:gap-4" onSubmit={handleSubmit}>
+    <form className="flex flex-col gap-2 text-base sm:grid sm:grid-cols-2 sm:gap-4 pointer-events-none" onSubmit={handleSubmit}>
       <div className="col-span-2 w-full">
       <InputText id="nameInput" label="Nombre completo" placeholder="John Doe" required icon={faUser} />
       </div>
