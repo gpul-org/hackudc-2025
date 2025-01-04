@@ -18,7 +18,9 @@ import Footer from '../../components/Footer.astro'
       >
 
       <div class="mx-auto mt-14 w-[300px] sm:w-[400px] md:w-[500px]">
-        <Logo />
+        <div class="m-auto w-fit">
+          <Logo />
+        </div>
       </div>
       <p class="mt-14 text-center text-3xl sm:text-4xl md:text-5xl">
         Regístrate para
@@ -30,8 +32,18 @@ import Footer from '../../components/Footer.astro'
 
       <!-- Formulario -->
       <div class="bg-animated mx-auto mt-12 w-full rounded-xl p-0.5">
-        <div class="rounded-xl bg-[#181818] p-4 md:p-8">
+        <div class="relative rounded-xl bg-[#181818] p-4 md:p-8">
           <Form client:load />
+          <div class="absolute inset-0 flex flex-col items-center justify-center rounded-xl backdrop-blur">
+            <h1
+              class="inline-block bg-gradient-to-br from-green-700 via-green-500 to-green-700 bg-clip-text pb-2 text-center text-7xl font-medium text-transparent"
+            >
+              Registro cerrado
+            </h1>
+            <h2 class="text-center text-xl md:w-3/6">
+              Hemos recibido más solicitudes que plazas, por lo que ya no aceptamos más solicitudes
+            </h2>
+          </div>
         </div>
       </div>
       <div class="mt-8 text-center text-lg">

@@ -61,7 +61,7 @@ export default function Form() {
   }
 
   return (
-    <form className="flex flex-col gap-2 text-base sm:grid sm:grid-cols-2 sm:gap-4" onSubmit={handleSubmit}>
+    <form className="flex flex-col gap-2 text-base sm:grid sm:grid-cols-2 sm:gap-4 pointer-events-none" onSubmit={handleSubmit}>
       <InputText id="nameInput" label="Nombre completo" placeholder="John Doe" required icon={faUser} />
       <InputText id="emailInput" label="Email" type="email" placeholder="john@example.com" required icon={faEnvelope} />
       <InputText
