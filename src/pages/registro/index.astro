@@ -3,6 +3,7 @@ import Layout from '../../layouts/Layout.astro'
 
 import Logo from '../../components/Logo.astro'
 import Form from '../../components/register/Form'
+import WaitList from '../../components/register/WaitList'
 
 import Footer from '../../components/Footer.astro'
 ---
@@ -41,20 +42,25 @@ import Footer from '../../components/Footer.astro'
               Registro cerrado
             </h1>
             <h2 class="text-center text-xl md:w-3/6">
-              Hemos recibido más solicitudes que plazas, por lo que ya no aceptamos más solicitudes
+              Hemos recibido más solicitudes que plazas, por lo que ya no aceptamos más solicitudes.
             </h2>
+            <div
+              class="my-4 flex w-11/12 items-center rounded-xl border-2 border-dashed border-green-500 bg-[#181818DD] sm:w-3/5"
+            >
+              <WaitList client:load />
+            </div>
           </div>
         </div>
       </div>
-      <div class="mt-8 text-center text-lg">
-        ¿Quieres participar como mentor? Entonces usa <a href="/registro/voluntarios" class="text-green-700 underline"
-          >este formulario</a
-        >
-      </div>
     </div>
-    <div class="h-[100px]"></div>
-    <Footer />
+    <div class="mt-8 text-center text-lg">
+      ¿Quieres participar como mentor? Entonces usa <a href="/registro/voluntarios" class="text-green-700 underline"
+        >este formulario</a
+      >
+    </div>
   </div>
+  <div class="h-[100px]"></div>
+  <Footer />
 </Layout>
 
 <style>
