@@ -31,7 +31,7 @@ export default function Form() {
         // Await the timeout for redirection to prevent re-clicking
         await new Promise((resolve) => setTimeout(resolve, 2000))
 
-        window.location.href = 'https://www.youtube.com/watch?v=Z4itLbMdTYM'
+        window.location.href = '/'
       } else {
         toast.remove()
         const errorData = await response.json() // Optional: parse error response for more details
