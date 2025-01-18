@@ -1,11 +1,12 @@
 ---
 import { Image } from 'astro:assets'
 
+import logoCICAS from '../../assets/sponsors/CICAS.svg'
 import logoDenodo from '../../assets/sponsors/denodo.svg'
+import logoDinahosting from '../../assets/sponsors/dinahosting.svg'
 import logoGradiant from '../../assets/sponsors/gradiant.svg'
 import logoMSS from '../../assets/sponsors/management-solutions.png'
 import logoNomaSystems from '../../assets/sponsors/nomasystems.png'
-import logoDinahosting from '../../assets/sponsors/dinahosting.svg'
 ---
 
 <h1
@@ -52,7 +53,11 @@ import logoDinahosting from '../../assets/sponsors/dinahosting.svg'
       <Image src={logoDinahosting} alt="Logo dinahosting" class="h-4/6 w-full object-contain" />
     </div>
   </a>
-  <div class="flex h-32 flex-col justify-center rounded-lg bg-white/20 text-center">Próximamente</div>
+  <a href="#">
+    <div class="flex h-32 flex-col justify-center rounded-lg bg-white/75 px-8 text-center">
+      <Image src={logoCICAS} alt="Logo dinahosting" class="h-4/6 w-full object-contain" />
+    </div>
+  </a>
 </div>
 
 <h3 id="sponsor-info" class="mt-12 scroll-m-28 px-10 text-center text-gray-200 sm:px-32 sm:text-lg md:px-52 md:text-xl">
