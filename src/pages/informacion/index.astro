@@ -2,6 +2,8 @@
 import Footer from '../../components/Footer.astro'
 import Layout from '../../layouts/Layout.astro'
 
+import Logo from '../../components/Logo.astro'
+
 import { faClock } from '@fortawesome/free-regular-svg-icons'
 import { faBus, faGavel, faInfo, faMedal, faPersonChalkboard } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -56,6 +58,11 @@ const scrollOptions = [
       >
     </div>
     <div class="mx-auto w-full max-w-screen-lg grow px-2">
+      <div class="mx-auto mt-14 w-[300px] sm:w-[400px] md:w-[500px]">
+        <div class="m-auto w-fit">
+          <Logo />
+        </div>
+      </div>
       <p class="mt-10 text-center text-5xl font-medium">
         <span
           class="inline-block bg-gradient-to-br from-green-700 via-green-500 to-green-700 bg-clip-text text-transparent"
