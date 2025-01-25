@@ -1,0 +1,113 @@
+---
+import Footer from '../../components/Footer.astro'
+import Layout from '../../layouts/Layout.astro'
+
+import { faClock } from '@fortawesome/free-regular-svg-icons'
+import { faBus, faGavel, faInfo, faMedal, faPersonChalkboard } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
+const scrollOptions = [
+  {
+    icon: faInfo,
+    title: 'Info. general',
+    subtitle: 'Fechas, ubicación, premios, etc.',
+    href: 'general/',
+  },
+  {
+    icon: faClock,
+    title: 'Horarios',
+    subtitle: '¿A qué hora se entregan los proyectos?',
+    href: 'horarios/',
+  },
+  {
+    icon: faGavel,
+    title: 'Reglas',
+    subtitle: '¿Alguna norma a seguir?',
+    href: 'reglas/',
+  },
+  {
+    icon: faMedal,
+    title: 'Retos y premios',
+    subtitle: '¿Cuales eran los retos?',
+    href: 'retos/',
+  },
+  {
+    icon: faPersonChalkboard,
+    title: 'Charlas patrocinadores',
+    subtitle: '¿Más información sobre los retos?',
+    href: 'charlas/',
+  },
+  {
+    icon: faBus,
+    title: 'Transporte',
+    subtitle: '¿Cómo se llega a la facultad?',
+    href: 'transporte/',
+  },
+]
+---
+
+<Layout title="HackUDC 2025 - Información sobre el evento">
+  <div class="flex h-screen flex-col">
+    <div class="mx-auto mt-6 w-full max-w-screen-lg grow px-2">
+      <a
+        href="/"
+        class="hover-bg-green-700 rounded-full border border-green-700 px-4 py-2 text-green-500 transition duration-150 hover:text-white"
+        >Volver a inicio</a
+      >
+    </div>
+    <div class="mx-auto w-full max-w-screen-lg grow px-2">
+      <p class="mt-10 text-center text-5xl font-medium">
+        <span
+          class="inline-block bg-gradient-to-br from-green-700 via-green-500 to-green-700 bg-clip-text text-transparent"
+        >
+          Información sobre el evento
+        </span>
+      </p>
+
+      <div class="mt-14 grid grid-cols-1 gap-4 px-2 sm:grid-cols-3">
+        {
+          scrollOptions.map((o) => {
+            return (
+              <a
+                href={o.href}
+                class="bg-animated flex h-36 flex-col justify-evenly rounded p-0.5 duration-150 hover:scale-[1.03]"
+              >
+                <div class="flex h-full flex-col justify-evenly rounded bg-[#242424] px-8 py-2 duration-150">
+                  <div class="px-1">
+                    <FontAwesomeIcon icon={o.icon} className="h-10" />
+                  </div>
+                  <div>
+                    <h2 class="text-xl">{o.title}</h2>
+                    <p class="text-sm font-light">{o.subtitle}</p>
+                  </div>
+                </div>
+              </a>
+            )
+          })
+        }
+      </div>
+    </div>
+
+    <style>
+      .bg-animated:hover {
+        animation: gradient 500ms ease;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+      }
+
+      .bg-animated {
+        background: linear-gradient(-45deg, #22c55e, #15803d 50%, #242424 50% 100%);
+        background-size: 200% 200%;
+      }
+      @keyframes gradient {
+        0% {
+          background-position: 0% 0%;
+        }
+        100% {
+          background-position: 100% 100%;
+        }
+      }
+    </style>
+    <Footer />
+  </div>
+</Layout>

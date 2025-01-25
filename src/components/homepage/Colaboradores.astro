@@ -4,6 +4,9 @@ import { Image } from 'astro:assets'
 import logoAMTEGA from '../../assets/collaborators/amtega.svg'
 import logoFIC from '../../assets/collaborators/fic.svg'
 import logoUDC from '../../assets/collaborators/udc.svg'
+
+import astro from '../../assets/collaborators/astro.svg'
+import perusinas from '../../assets/collaborators/perusinas-ii.png'
 ---
 
 <h1
@@ -13,6 +16,18 @@ import logoUDC from '../../assets/collaborators/udc.svg'
   Colaboradores
 </h1>
 <h2 class="mt-2 text-center text-gray-300 sm:text-xl md:text-2xl">Nos ayudan a hacer realidad el evento</h2>
+<div class="mb-12 mt-4 grid grid-cols-1 gap-8 px-3 sm:grid-cols-2 md:grid-cols-2">
+  <a href="https://astrocafe.es/">
+    <div class="flex h-32 flex-col justify-center overflow-hidden rounded-lg p-2 text-center">
+      <Image src={astro} alt="Logo UDC" class="h-full w-full object-contain" />
+    </div>
+  </a>
+  <a href="https://perusinas.com/">
+    <div class="flex h-32 flex-col justify-center overflow-hidden rounded-lg p-2 text-center">
+      <Image src={perusinas} alt="Logo FIC" class="h-full w-full object-contain" />
+    </div>
+  </a>
+</div>
 <div class="mt-4 grid grid-cols-1 gap-8 px-3 sm:grid-cols-2 md:grid-cols-3">
   <a href="https://udc.gal">
     <div class="flex h-32 flex-col justify-center overflow-hidden rounded-lg p-2 text-center">
