@@ -1,5 +1,6 @@
 ---
-import { faBullhorn, faInfo, faLaptopCode } from '@fortawesome/free-solid-svg-icons'
+import { faClock } from '@fortawesome/free-regular-svg-icons'
+import { faBullhorn, faInfo } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const scrollOptions = [
@@ -7,19 +8,19 @@ const scrollOptions = [
     icon: faInfo,
     title: 'Info. general',
     subtitle: 'Fechas, ubicación, premios, etc.',
-    href: '#info',
+    href: 'informacion/',
   },
   {
-    icon: faLaptopCode,
-    title: 'Participar',
-    subtitle: 'No pierdas más tiempo, ¡regístrate!',
-    href: '/registro',
+    icon: faClock,
+    title: 'Horarios',
+    subtitle: '¿A qué hora se entregan los proyectos?',
+    href: 'informacion/horarios',
   },
   {
     icon: faBullhorn,
-    title: 'Patrocinar',
+    title: 'Patrocinadores',
     subtitle: 'Consulta los planes de patrocinio.',
-    href: '#sponsor-info',
+    href: '#sponsors',
   },
 ]
 ---
